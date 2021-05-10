@@ -23,7 +23,7 @@ $ cmake ..
 $ make install
 ```
 ### Database
-<img src="diagram.svg" width="100%" height="auto" alt="Pizzeria Database Diagram">
+[<img src="diagram.svg" width="100%" alt="Pizzeria Database Diagram"/>](diagram.svg)
 
 
 # Starter-Projekt/-Template für C++ mit modernen Entwicklungs-Tools
