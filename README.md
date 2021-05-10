@@ -23,7 +23,7 @@ $ cmake ..
 $ make install
 ```
 ### Database
-![Pizzeria Database Diagram](https://github.com/whz-modul-cpp-pti06830/apl-1-satarov/blob/master/diagram.png?raw=true)
+<img src="diagram.png" width="100%" height="auto" alt="Pizzeria Database Diagram">
 
 
 # Starter-Projekt/-Template für C++ mit modernen Entwicklungs-Tools
