@@ -1,14 +1,27 @@
-#include <catch2/catch.hpp>
 
-unsigned int Factorial(unsigned int number)
-{
-  return number <= 1 ? number : Factorial(number - 1) * number;
+#include "MyControllerTest.hpp"
+
+#include <iostream>
+
+void runTests() {
+  OATPP_RUN_TEST(MyControllerTest);
 }
 
-TEST_CASE("Factorials are computed", "[factorial]")
-{
-  REQUIRE(Factorial(1) == 1);
-  REQUIRE(Factorial(2) == 2);
-  REQUIRE(Factorial(3) == 6);
-  REQUIRE(Factorial(10) == 3628800);
+int main() {
+
+  oatpp::base::Environment::init();
+
+  runTests();
+
+  /* Print how much objects were created during app running, and what have left-probably leaked */
+  /* Disable object counting for release builds using '-D OATPP_DISABLE_ENV_OBJECT_COUNTERS' flag for better performance */
+  std::cout << "\nEnvironment:\n";
+  std::cout << "objectsCount = " << oatpp::base::Environment::getObjectsCount() << "\n";
+  std::cout << "objectsCreated = " << oatpp::base::Environment::getObjectsCreated() << "\n\n";
+
+  OATPP_ASSERT(oatpp::base::Environment::getObjectsCount() == 0);
+
+  oatpp::base::Environment::destroy();
+
+  return 0;
 }
