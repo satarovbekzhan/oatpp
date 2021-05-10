@@ -22,6 +22,7 @@ $ mkdir build && cd build
 $ cmake ..
 $ make install
 ```
+### Database
 ![Pizzeria Database Diagram](https://github.com/whz-modul-cpp-pti06830/apl-1-satarov/blob/master/diagram.png?raw=true)
 
 
