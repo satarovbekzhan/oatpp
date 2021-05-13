@@ -1,27 +1,21 @@
-#include "./controller/MyController.hpp"
-#include "./AppComponent.hpp"
+#include <fmt/format.h>
+#include <iostream>
+
+#include "oatpp/web/server/HttpConnectionHandler.hpp"
 
 #include "oatpp/network/Server.hpp"
-
-#include <iostream>
+#include "oatpp/network/tcp/server/ConnectionProvider.hpp"
 
 void run() {
 
-  /* Register Components in scope of run() method */
-  AppComponent components;
+  /* Create Router for HTTP requests routing */
+  auto router = oatpp::web::server::HttpRouter::createShared();
 
-  /* Get router component */
-  OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
+  /* Create HTTP connection handler with router */
+  auto connectionHandler = oatpp::web::server::HttpConnectionHandler::createShared(router);
 
-  /* Create MyController and add all of its endpoints to router */
-  auto myController = std::make_shared<MyController>();
-  myController->addEndpointsToRouter(router);
-
-  /* Get connection handler component */
-  OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
-
-  /* Get connection provider component */
-  OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
+  /* Create TCP connection provider */
+  auto connectionProvider = oatpp::network::tcp::server::ConnectionProvider::createShared({"localhost", 8000, oatpp::network::Address::IP_4});
 
   /* Create server which takes provided TCP connections and passes them to HTTP connection handler */
   oatpp::network::Server server(connectionProvider, connectionHandler);
@@ -31,25 +25,19 @@ void run() {
 
   /* Run server */
   server.run();
-
 }
 
-/**
- *  main
- */
-int main(int argc, const char * argv[]) {
+int main() {
 
+  /* Init oatpp Environment */
   oatpp::base::Environment::init();
 
+  /* Run App */
   run();
 
-  /* Print how much objects were created during app running, and what have left-probably leaked */
-  /* Disable object counting for release builds using '-D OATPP_DISABLE_ENV_OBJECT_COUNTERS' flag for better performance */
-  std::cout << "\nEnvironment:\n";
-  std::cout << "objectsCount = " << oatpp::base::Environment::getObjectsCount() << "\n";
-  std::cout << "objectsCreated = " << oatpp::base::Environment::getObjectsCreated() << "\n\n";
-
+  /* Destroy oatpp Environment */
   oatpp::base::Environment::destroy();
 
   return 0;
+
 }
