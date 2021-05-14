@@ -79,21 +79,29 @@ if(ENABLE_FUZZING)
     add_subdirectory(fuzz_test)
 endif()
 
+#add_subdirectory(src)
+
 # ############################################################
 
-#add_library(pizzeria-lib
-#        )
+add_library(pizzeria-lib
+        src/dto/AddressDto.hpp
+        src/dto/CartDto.hpp
+        src/dto/CartItemDto.hpp
+        src/dto/CategoryDto.hpp
+        src/dto/HistoryDto.hpp
+        src/dto/IngredientDto.hpp
+        src/dto/OrderDto.hpp
+        src/dto/OrderItemDto.hpp
+        src/dto/PhoneDto.hpp
+        src/dto/ProductDto.hpp
+        src/dto/ProductInstanceDto.hpp
+        src/dto/SizeDto.hpp
+        src/dto/UserDto.hpp)
 
-find_package(oatpp          1.2.5 REQUIRED)
+find_package(oatpp 1.2.5 REQUIRED)
 
-#target_link_libraries(pizzeria-lib
-#        PUBLIC oatpp::oatpp)
+target_link_libraries(pizzeria-lib
+        PUBLIC oatpp::oatpp)
 
 add_executable(pizzeria-exe src/App.cpp)
-target_link_libraries(pizzeria-exe
-#        pizzeria-lib
-        PUBLIC oatpp::oatpp
-        project_options
-        fmt::fmt)
-
-#add_subdirectory(src)
+target_link_libraries(pizzeria-exe pizzeria-lib)
