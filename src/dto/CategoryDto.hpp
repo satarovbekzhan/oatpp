@@ -1,3 +1,6 @@
+#ifndef CategoryDto_hpp
+#define CategoryDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class CategoryDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//CategoryDto_hpp

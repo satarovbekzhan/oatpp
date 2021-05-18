@@ -1,3 +1,6 @@
+#ifndef HistoryDto_hpp
+#define HistoryDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class HistoryDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//HistoryDto_hpp

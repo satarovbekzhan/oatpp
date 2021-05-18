@@ -1,3 +1,6 @@
+#ifndef UserDto_hpp
+#define UserDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -21,3 +24,5 @@ class UserDto : public oatpp::DTO
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//UserDto_hpp

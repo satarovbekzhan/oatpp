@@ -1,3 +1,6 @@
+#ifndef OrderDto_hpp
+#define OrderDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class OrderDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//OrderDto_hpp

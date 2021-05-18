@@ -1,3 +1,6 @@
+#ifndef ProductDto_hpp
+#define ProductDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class ProductDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//ProductDto_hpp

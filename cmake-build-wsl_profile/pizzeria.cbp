@@ -5,7 +5,7 @@
 		<Option title="pizzeria"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-wsl_profile\;CMake Files\cmake-build-wsl_profile\_deps\;CMake Files\cmake-build-wsl_profile\_deps\catch2-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\cmake\;CMake Files\cmake-build-wsl_profile\cmake\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-1.2.5\;CMake Files\test\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-wsl_profile\;CMake Files\cmake-build-wsl_profile\_deps\;CMake Files\cmake-build-wsl_profile\_deps\catch2-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\cmake\;CMake Files\cmake-build-wsl_profile\cmake\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-1.2.5\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\;CMake Files\test\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile"/>
@@ -74,7 +74,11 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -97,7 +101,11 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -140,7 +148,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -163,7 +175,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
+					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -744,6 +760,18 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/App.cpp">
 			<Option target="pizzeria-exe"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/AppComponent.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/DatabaseComponent.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/controller/UserController.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/UserDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/AddressDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
@@ -781,6 +809,12 @@
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/UserDto.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/UserService.cpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/UserService.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/catch_main.cpp">
@@ -857,6 +891,18 @@
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-1.2.5/oatppTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-1.2.5\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-sqlite-1.2.5/oatpp-sqliteConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-sqlite-1.2.5/oatpp-sqliteConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-sqlite-1.2.5/oatpp-sqliteTargets-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-sqlite-1.2.5/oatpp-sqliteTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\test\"/>

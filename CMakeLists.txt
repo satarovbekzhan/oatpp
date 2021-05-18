@@ -84,6 +84,11 @@ endif()
 # ############################################################
 
 add_library(pizzeria-lib
+        src/AppComponent.hpp
+        src/DatabaseComponent.hpp
+#        controller
+        src/controller/UserController.hpp
+#        dto
         src/dto/AddressDto.hpp
         src/dto/CartDto.hpp
         src/dto/CartItemDto.hpp
@@ -96,12 +101,34 @@ add_library(pizzeria-lib
         src/dto/ProductDto.hpp
         src/dto/ProductInstanceDto.hpp
         src/dto/SizeDto.hpp
-        src/dto/UserDto.hpp)
+        src/dto/UserDto.hpp
+#        db
+        src/db/UserDb.hpp
+#        service
+        src/service/UserService.hpp
+        src/service/UserService.cpp
+        )
 
 find_package(oatpp 1.2.5 REQUIRED)
-
+find_package(oatpp-sqlite 1.2.5 REQUIRED)
 target_link_libraries(pizzeria-lib
-        PUBLIC oatpp::oatpp)
+        PUBLIC oatpp::oatpp
+        PUBLIC oatpp::oatpp-sqlite)
+
+if(CMAKE_SYSTEM_NAME MATCHES Linux)
+    find_package(Threads REQUIRED)
+    target_link_libraries(pizzeria-lib INTERFACE Threads::Threads ${CMAKE_DL_LIBS})
+endif()
+
+add_definitions(
+        ## SQLite database file
+        -DDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/db.sqlite"
+        ## SQLite database test file
+#        -DTESTDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/test-db.sqlite"
+
+        ## Path to database migration scripts
+        -DDATABASE_MIGRATIONS="${CMAKE_CURRENT_SOURCE_DIR}/sql"
+)
 
 add_executable(pizzeria-exe src/App.cpp)
 target_link_libraries(pizzeria-exe pizzeria-lib)

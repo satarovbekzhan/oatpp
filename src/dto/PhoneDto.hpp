@@ -1,3 +1,6 @@
+#ifndef PhoneDto_hpp
+#define PhoneDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class PhoneDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//PhoneDto_hpp

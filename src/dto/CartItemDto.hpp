@@ -1,3 +1,6 @@
+#ifndef CartItemDto_hpp
+#define CartItemDto_hpp
+
 #include "oatpp/core/Types.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -12,3 +15,5 @@ class CartItemDto : public oatpp::DTO {
 };
 
 #include OATPP_CODEGEN_END(DTO)
+
+#endif//CartItemDto_hpp
