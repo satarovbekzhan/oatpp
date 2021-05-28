@@ -14,7 +14,6 @@ public:
 
   // User Model Database Client
   OATPP_CREATE_COMPONENT(std::shared_ptr<UserDb>, userDatabaseClient)([] {
-//    auto connectionProvider = std::make_shared<oatpp::sqlite::ConnectionProvider>(DATABASE_FILE);
     OATPP_COMPONENT(std::shared_ptr<oatpp::provider::Provider<oatpp::sqlite::Connection>>, connectionProvider);
     auto executor = std::make_shared<oatpp::sqlite::Executor>(connectionProvider);
     return std::make_shared<UserDb>(executor);

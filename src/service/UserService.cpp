@@ -1,14 +1,7 @@
 #include "UserService.hpp"
 
 oatpp::Object<UserDto> UserService::createUser(const oatpp::Object<UserDto>& dto) {
-  auto dbResult = userDatabaseClient->createUser(
-    dto->email,
-    dto->password,
-    dto->firstname,
-    dto->lastname,
-    dto->salutation,
-    dto->role
-    );
+  auto dbResult = userDatabaseClient->createUser(dto);
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500, dbResult->getErrorMessage());
   auto userId = oatpp::sqlite::Utils::getLastInsertRowId(dbResult->getConnection());
   return getUserById((v_int32) userId);
@@ -28,4 +21,17 @@ oatpp::Object<UserDto> UserService::getUserById(const oatpp::Int32& id) {
   auto result = dbResult->fetch<oatpp::Vector<oatpp::Object<UserDto>>>();
   OATPP_ASSERT_HTTP(result->size() == 1, Status::CODE_500, "Unknown error");
   return result[0];
+}
+
+oatpp::Object<UserDto> UserService::updateUser(const oatpp::Object<UserDto>& dto) {
+  auto dbResult = userDatabaseClient->updateUser(dto);
+  OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500, dbResult->getErrorMessage());
+  return getUserById(dto->id);
+}
+
+oatpp::Object<UserDto> UserService::deleteUserById(const oatpp::Int32& id) {
+  auto tempUser = getUserById(id);
+  auto dbResult = userDatabaseClient->deleteUserById(id);
+  OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500, dbResult->getErrorMessage());
+  return tempUser;
 }

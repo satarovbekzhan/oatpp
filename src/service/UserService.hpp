@@ -17,6 +17,8 @@ public:
   oatpp::Object<UserDto> createUser(const oatpp::Object<UserDto>& dto);
   oatpp::Vector<oatpp::Object<UserDto>> getAllUsers(const oatpp::UInt32& offset, const oatpp::UInt32& limit);
   oatpp::Object<UserDto> getUserById(const oatpp::Int32& id);
+  oatpp::Object<UserDto> updateUser(const oatpp::Object<UserDto>& dto);
+  oatpp::Object<UserDto> deleteUserById(const oatpp::Int32& id);
 };
 
 #endif//UserService_hpp
