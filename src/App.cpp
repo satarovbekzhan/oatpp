@@ -9,6 +9,7 @@
 #include "AppComponent.hpp"
 #include "controller/UserController.hpp"
 #include "controller/MainController.hpp"
+#include "controller/LoginController.hpp"
 
 void run() {
   AppComponent components;
@@ -17,9 +18,11 @@ void run() {
 
   auto userController = std::make_shared<UserController>();
   userController->addEndpointsToRouter(router);
-//  router->route("GET", "/user", std::make_shared<Handler>());
+
   auto productController = std::make_shared<MainController>();
   productController->addEndpointsToRouter(router);
+  auto loginController = std::make_shared<LoginController>();
+  loginController->addEndpointsToRouter(router);
 
   OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
   OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);

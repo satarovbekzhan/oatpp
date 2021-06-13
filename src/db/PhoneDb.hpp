@@ -4,7 +4,7 @@
 #include "oatpp/orm/SchemaMigration.hpp"
 #include "oatpp/orm/DbClient.hpp"
 #include "oatpp/core/macro/codegen.hpp"
-#include "../dto/PhoneDto.hpp"
+#include "../dto/model/PhoneDto.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DbClient)
 

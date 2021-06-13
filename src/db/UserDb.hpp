@@ -4,18 +4,14 @@
 #include "oatpp/orm/SchemaMigration.hpp"
 #include "oatpp/orm/DbClient.hpp"
 #include "oatpp/core/macro/codegen.hpp"
-#include "../dto/UserDto.hpp"
+#include "../dto/model/UserDto.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DbClient)
 
 class UserDb : public oatpp::orm::DbClient {
 public:
 
-  UserDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/user_init.sql");
-//    migration.migrate();
-  }
+  UserDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {}
 
   QUERY(createUser,
         "INSERT INTO user "
@@ -36,6 +32,10 @@ public:
   QUERY(getUserById,
         "SELECT * FROM user WHERE id=:id;",
         PARAM(oatpp::Int32, id))
+
+  QUERY(getUserByEmail,
+        "SELECT * FROM user WHERE email=:email;",
+        PARAM(oatpp::String, email))
 
   QUERY(updateUser,
         "UPDATE user "

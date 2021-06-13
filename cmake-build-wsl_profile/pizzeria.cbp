@@ -5,7 +5,7 @@
 		<Option title="pizzeria"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-wsl_profile\;CMake Files\cmake-build-wsl_profile\_deps\;CMake Files\cmake-build-wsl_profile\_deps\catch2-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\cmake\;CMake Files\cmake-build-wsl_profile\cmake\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-1.2.5\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\;CMake Files\test\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-wsl_profile\;CMake Files\cmake-build-wsl_profile\_deps\;CMake Files\cmake-build-wsl_profile\_deps\catch2-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\;CMake Files\cmake-build-wsl_profile\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\;CMake Files\cmake-build-wsl_profile\_deps\spdlog-src\cmake\;CMake Files\cmake-build-wsl_profile\cmake\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-1.2.5\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\;CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\cpp-jwt\;CMake Files\test\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile"/>
@@ -78,13 +78,13 @@
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/satar/Univer/C++\ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 pizzeria-lib"/>
@@ -104,13 +104,13 @@
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/satar/Univer/C++\ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 pizzeria-lib/fast"/>
@@ -150,13 +150,13 @@
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/satar/Univer/C++\ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 pizzeria-exe"/>
@@ -176,13 +176,13 @@
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/satar/Univer/C++\ SS2021/Cpp/apl-1-satarov/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 pizzeria-exe/fast"/>
@@ -762,6 +762,15 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/DatabaseComponent.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/auth/CustomAuthorizationObject.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/auth/CustomBearerAuthorizationHandler.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/controller/LoginController.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/controller/MainController.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
@@ -801,37 +810,43 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/UserDb.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/AddressDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/LoginDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/CartDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/TokenDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/CategoryDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/AddressDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/IngredientDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/CartDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/OrderDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/CategoryDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/PhoneDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/IngredientDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/PriceDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/OrderDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/ProductDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/PhoneDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/RefProductCategoryDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/PriceDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/RefProductIngredientDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/ProductDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/UserDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/RefProductCategoryDto.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/RefProductIngredientDto.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/model/UserDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/ProductService.cpp">
@@ -844,6 +859,9 @@
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/UserService.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/util/JwtUtil.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/catch_main.cpp">
@@ -932,6 +950,15 @@
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/oatpp-sqlite-1.2.5/oatpp-sqliteTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\oatpp-sqlite-1.2.5\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/cpp-jwt/cpp-jwtConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\cpp-jwt\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/cpp-jwt/cpp-jwtConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\cpp-jwt\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/../../../../../../../../usr/local/lib/cmake/cpp-jwt/cpp-jwtTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\lib\cmake\cpp-jwt\"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\test\"/>

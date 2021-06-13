@@ -4,7 +4,7 @@
 #include "oatpp/orm/SchemaMigration.hpp"
 #include "oatpp/orm/DbClient.hpp"
 #include "oatpp/core/macro/codegen.hpp"
-#include "../dto/CartDto.hpp"
+#include "../dto/model/CartDto.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DbClient)
 

@@ -86,21 +86,27 @@ endif()
 add_library(pizzeria-lib
         src/AppComponent.hpp
         src/DatabaseComponent.hpp
+#        auth
+        src/auth/CustomAuthorizationObject.hpp
+        src/auth/CustomBearerAuthorizationHandler.hpp
 #        controller
         src/controller/UserController.hpp
         src/controller/MainController.hpp
+        src/controller/LoginController.hpp
 #        dto
-        src/dto/UserDto.hpp
-        src/dto/PhoneDto.hpp
-        src/dto/AddressDto.hpp
-        src/dto/ProductDto.hpp
-        src/dto/IngredientDto.hpp
-        src/dto/RefProductIngredientDto.hpp
-        src/dto/CategoryDto.hpp
-        src/dto/RefProductCategoryDto.hpp
-        src/dto/PriceDto.hpp
-        src/dto/CartDto.hpp
-        src/dto/OrderDto.hpp
+        src/dto/model/UserDto.hpp
+        src/dto/model/PhoneDto.hpp
+        src/dto/model/AddressDto.hpp
+        src/dto/model/ProductDto.hpp
+        src/dto/model/IngredientDto.hpp
+        src/dto/model/RefProductIngredientDto.hpp
+        src/dto/model/CategoryDto.hpp
+        src/dto/model/RefProductCategoryDto.hpp
+        src/dto/model/PriceDto.hpp
+        src/dto/model/CartDto.hpp
+        src/dto/model/OrderDto.hpp
+        src/dto/LoginDto.hpp
+        src/dto/TokenDto.hpp
 #        db
         src/db/UserDb.hpp
         src/db/PhoneDb.hpp
@@ -118,13 +124,18 @@ add_library(pizzeria-lib
         src/service/UserService.cpp
         src/service/ProductService.hpp
         src/service/ProductService.cpp
+#        util
+        src/util/JwtUtil.hpp
         )
 
 find_package(oatpp 1.2.5 REQUIRED)
 find_package(oatpp-sqlite 1.2.5 REQUIRED)
+find_package(cpp-jwt REQUIRED)
+
 target_link_libraries(pizzeria-lib
         PUBLIC oatpp::oatpp
-        PUBLIC oatpp::oatpp-sqlite)
+        PUBLIC oatpp::oatpp-sqlite
+        PUBLIC cpp-jwt::cpp-jwt)
 
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     find_package(Threads REQUIRED)
