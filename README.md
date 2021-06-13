@@ -27,14 +27,15 @@ In addition to Oat++ it uses external JWT library, so to install it:
 $ sudo apt install nlohmann-json3-dev 
 $ sudo apt install libgtest-dev
 $ sudo apt install libssl-dev
+
 $ git clone https://github.com/arun11299/cpp-jwt.git
 $ cd cpp-jwt
-$ mkdir build
-$ cd build
+$ mkdir build && cd build
+
 $ cmake ..
 $ cmake --build . -j
 $ sudo make install
 ```
 ### Database
-[<img src="diagram.svg" width="100%" alt="Pizzeria Database Diagram"/>](diagram.png)
+[<img src="diagram.png" width="100%" alt="Pizzeria Database Diagram"/>](diagram.png)
 
