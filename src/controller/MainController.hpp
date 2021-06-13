@@ -30,10 +30,15 @@ public:
     return createDtoResponse(Status::CODE_200, productService.getAllProducts(offset, limit));
   }
 
-  //
+  // hi with authorization
   ENDPOINT("GET", "/hi", sayHi, AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
     OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized");
     return createResponse(Status::CODE_200, authObject->userId + " - " + authObject->userRole);
+  }
+
+  // hello
+  ENDPOINT("GET", "/hello", sayHello) {
+    return createResponse(Status::CODE_200, "Hello World!");
   }
 
 };
