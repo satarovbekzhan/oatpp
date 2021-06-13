@@ -11,6 +11,9 @@ class ProductDto : public oatpp::DTO {
   DTO_INIT(ProductDto, DTO)
 
   DTO_FIELD(Int32, id);
+  DTO_FIELD(String, title, "title");
+  DTO_FIELD(String, description, "description");
+  DTO_FIELD(String, picture, "picture");
 
 };
 

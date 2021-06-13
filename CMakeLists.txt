@@ -88,25 +88,36 @@ add_library(pizzeria-lib
         src/DatabaseComponent.hpp
 #        controller
         src/controller/UserController.hpp
+        src/controller/MainController.hpp
 #        dto
-        src/dto/AddressDto.hpp
-        src/dto/CartDto.hpp
-        src/dto/CartItemDto.hpp
-        src/dto/CategoryDto.hpp
-        src/dto/HistoryDto.hpp
-        src/dto/IngredientDto.hpp
-        src/dto/OrderDto.hpp
-        src/dto/OrderItemDto.hpp
-        src/dto/PhoneDto.hpp
-        src/dto/ProductDto.hpp
-        src/dto/ProductInstanceDto.hpp
-        src/dto/SizeDto.hpp
         src/dto/UserDto.hpp
+        src/dto/PhoneDto.hpp
+        src/dto/AddressDto.hpp
+        src/dto/ProductDto.hpp
+        src/dto/IngredientDto.hpp
+        src/dto/RefProductIngredientDto.hpp
+        src/dto/CategoryDto.hpp
+        src/dto/RefProductCategoryDto.hpp
+        src/dto/PriceDto.hpp
+        src/dto/CartDto.hpp
+        src/dto/OrderDto.hpp
 #        db
         src/db/UserDb.hpp
+        src/db/PhoneDb.hpp
+        src/db/AddressDb.hpp
+        src/db/ProductDb.hpp
+        src/db/IngredientDb.hpp
+        src/db/RefProductIngredientDb.hpp
+        src/db/CategoryDb.hpp
+        src/db/RefProductCategoryDb.hpp
+        src/db/PriceDb.hpp
+        src/db/CartDb.hpp
+        src/db/OrderDb.hpp
 #        service
         src/service/UserService.hpp
         src/service/UserService.cpp
+        src/service/ProductService.hpp
+        src/service/ProductService.cpp
         )
 
 find_package(oatpp 1.2.5 REQUIRED)
@@ -123,11 +134,11 @@ endif()
 add_definitions(
         ## SQLite database file
         -DDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/db.sqlite"
-        ## SQLite database test file
-#        -DTESTDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/test-db.sqlite"
 
+        ## SQLite database test file
+        ## -DTESTDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/test-db.sqlite"
         ## Path to database migration scripts
-        -DDATABASE_MIGRATIONS="${CMAKE_CURRENT_SOURCE_DIR}/sql"
+        ## -DDATABASE_MIGRATIONS="${CMAKE_CURRENT_SOURCE_DIR}/sql"
 )
 
 add_executable(pizzeria-exe src/App.cpp)

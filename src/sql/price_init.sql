@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS price;
+CREATE TABLE price (
+     id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+     product INTEGER,
+     value DECIMAL(9,2),
+     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- INSERT INTO price (product, value) VALUES (0, 4.75);

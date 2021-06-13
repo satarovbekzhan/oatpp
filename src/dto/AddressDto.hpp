@@ -10,8 +10,12 @@ class AddressDto : public oatpp::DTO {
 
   DTO_INIT(AddressDto, DTO)
 
-  DTO_FIELD(String, name);
-  DTO_FIELD(Int32, age);
+  DTO_FIELD(Int32, id);
+  DTO_FIELD(String, town, "town");
+  DTO_FIELD(String, street, "street");
+  DTO_FIELD(String, house, "house");
+  DTO_FIELD(String, note, "note");
+  DTO_FIELD(Int32, user, "user");
 
 };
 

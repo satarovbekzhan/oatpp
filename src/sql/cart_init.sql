@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS cart;
+CREATE TABLE cart (
+    id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,
+    product INTEGER,
+    user INTEGER,
+    amount INTEGER
+);

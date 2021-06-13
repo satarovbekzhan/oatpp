@@ -11,25 +11,14 @@
 class UserDb : public oatpp::orm::DbClient {
 public:
 
-  UserDb(const std::shared_ptr<oatpp::orm::Executor>& executor)
-    : oatpp::orm::DbClient(executor)
-  {}
-
-//  QUERY(createUser,
-//        "INSERT INTO users "
-//        "(email, password, firstname, "
-//        "lastname, salutation, role) "
-//        "VALUES (:email, :password, "
-//        ":firstname, :lastname, :salutation, :role);",
-//        PARAM(oatpp::String, email),
-//        PARAM(oatpp::String, password),
-//        PARAM(oatpp::String, firstname),
-//        PARAM(oatpp::String, lastname),
-//        PARAM(oatpp::String, salutation),
-//        PARAM(oatpp::Enum<Role>::AsString, role))
+  UserDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
+//    oatpp::orm::SchemaMigration migration(executor);
+//    migration.addFile(1, "src/sql/user_init.sql");
+//    migration.migrate();
+  }
 
   QUERY(createUser,
-        "INSERT INTO users "
+        "INSERT INTO user "
         "(email, password, firstname, lastname, salutation, role) "
         "VALUES (:user.email, "
         ":user.password, "
@@ -40,16 +29,16 @@ public:
         PARAM(oatpp::Object<UserDto>, user))
 
   QUERY(getAllUsers,
-        "SELECT * FROM users LIMIT :limit OFFSET :offset;",
+        "SELECT * FROM user LIMIT :limit OFFSET :offset;",
         PARAM(oatpp::UInt32, offset),
         PARAM(oatpp::UInt32, limit))
 
   QUERY(getUserById,
-        "SELECT * FROM users WHERE id=:id;",
+        "SELECT * FROM user WHERE id=:id;",
         PARAM(oatpp::Int32, id))
 
   QUERY(updateUser,
-        "UPDATE users "
+        "UPDATE user "
         "SET "
         "email=:user.email, "
         "password=:user.password, "
@@ -61,7 +50,7 @@ public:
         PARAM(oatpp::Object<UserDto>, user))
 
   QUERY(deleteUserById,
-        "DELETE FROM users WHERE id=:id",
+        "DELETE FROM user WHERE id=:id",
         PARAM(oatpp::Int32, id))
 };
 

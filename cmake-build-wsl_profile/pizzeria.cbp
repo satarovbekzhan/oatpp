@@ -75,7 +75,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
-					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -102,7 +101,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
-					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -149,7 +147,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
-					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -176,7 +173,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
-					<Add option="-DDATABASE_MIGRATIONS=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/sql&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -766,7 +762,40 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/DatabaseComponent.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/controller/MainController.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/controller/UserController.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/AddressDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/CartDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/CategoryDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/IngredientDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/OrderDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/PhoneDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/PriceDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/ProductDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/RefProductCategoryDb.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/RefProductIngredientDb.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/db/UserDb.hpp">
@@ -778,13 +807,7 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/CartDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/CartItemDto.hpp">
-			<Option target="pizzeria-lib"/>
-		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/CategoryDto.hpp">
-			<Option target="pizzeria-lib"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/HistoryDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/IngredientDto.hpp">
@@ -793,22 +816,28 @@
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/OrderDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/OrderItemDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/PhoneDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/PhoneDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/PriceDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/ProductDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/ProductInstanceDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/RefProductCategoryDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/SizeDto.hpp">
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/RefProductIngredientDto.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/dto/UserDto.hpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/ProductService.cpp">
+			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/ProductService.hpp">
 			<Option target="pizzeria-lib"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/service/UserService.cpp">
