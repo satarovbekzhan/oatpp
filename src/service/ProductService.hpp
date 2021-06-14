@@ -10,11 +10,16 @@
 
 class ProductService {
 private:
-  typedef oatpp::web::protocol::http::Status Status;
+
+    typedef oatpp::web::protocol::http::Status Status;
+
 private:
-  OATPP_COMPONENT(std::shared_ptr<ProductDb>, productDatabaseClient);
+
+    OATPP_COMPONENT(std::shared_ptr<ProductDb>, productDatabaseClient);
+
 public:
-  oatpp::Vector<oatpp::Object<ProductDto>> getAllProducts(const oatpp::UInt32& offset, const oatpp::UInt32& limit);
+
+    oatpp::Vector<oatpp::Object<ProductDto>> getAllProducts(const oatpp::UInt32 &offset, const oatpp::UInt32 &limit);
 };
 
 #endif//ProductService_hpp

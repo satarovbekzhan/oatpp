@@ -8,11 +8,11 @@
 
 class RefProductIngredientDto : public oatpp::DTO {
 
-  DTO_INIT(RefProductIngredientDto, DTO)
+    DTO_INIT(RefProductIngredientDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(Int32, ingredient, "ingredient");
-  DTO_FIELD(Int32, product, "product");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(Int32, ingredient, "ingredient");
+    DTO_FIELD(Int32, product, "product");
 
 };
 

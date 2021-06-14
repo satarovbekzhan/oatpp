@@ -7,8 +7,5 @@
         <pair source="cu" header="cuh" fileNamingConvention="NONE" />
       </extensions>
     </Objective-C-extensions>
-    <clangFormatSettings>
-      <option name="ENABLED" value="true" />
-    </clangFormatSettings>
   </code_scheme>
 </component>

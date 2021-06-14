@@ -10,9 +10,9 @@ class TestClient : public oatpp::web::client::ApiClient {
 
 API_CLIENT_INIT(TestClient)
 
-  API_CALL("GET", "/users/1", getBekzhanUser)
+    API_CALL("GET", "/users/1", getBekzhanUser)
 
-  // TODO - add more client API calls here
+    // TODO - add more client API calls here
 
 };
 

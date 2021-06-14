@@ -8,14 +8,14 @@
 
 class OrderDto : public oatpp::DTO {
 
-  DTO_INIT(OrderDto, DTO)
+    DTO_INIT(OrderDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(Int32, product, "product");
-  DTO_FIELD(Int32, user, "user");
-  DTO_FIELD(Int32, amount, "amount");
-  DTO_FIELD(Int32, address, "address");
-  DTO_FIELD(Int64, timestamp, "timestamp");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(Int32, product, "product");
+    DTO_FIELD(Int32, user, "user");
+    DTO_FIELD(Int32, amount, "amount");
+    DTO_FIELD(Int32, address, "address");
+    DTO_FIELD(Int64, timestamp, "timestamp");
 
 };
 

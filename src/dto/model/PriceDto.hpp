@@ -8,12 +8,12 @@
 
 class PriceDto : public oatpp::DTO {
 
-  DTO_INIT(PriceDto, DTO)
+    DTO_INIT(PriceDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(Int32, product, "product");
-  DTO_FIELD(Int32, value, "value");
-  DTO_FIELD(Int64, timestamp, "timestamp");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(Int32, product, "product");
+    DTO_FIELD(Int32, value, "value");
+    DTO_FIELD(Int64, timestamp, "timestamp");
 
 };
 

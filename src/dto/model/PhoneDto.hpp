@@ -8,11 +8,11 @@
 
 class PhoneDto : public oatpp::DTO {
 
-  DTO_INIT(PhoneDto, DTO)
+    DTO_INIT(PhoneDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(String, number, "number");
-  DTO_FIELD(Int32, user, "user");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(String, number, "number");
+    DTO_FIELD(Int32, user, "user");
 
 };
 

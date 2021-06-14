@@ -8,10 +8,10 @@
 
 class CategoryDto : public oatpp::DTO {
 
-  DTO_INIT(CategoryDto, DTO)
+    DTO_INIT(CategoryDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(String, name, "name");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(String, name, "name");
 
 };
 

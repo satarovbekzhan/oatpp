@@ -3,10 +3,10 @@
 
 class CustomAuthorizationObject : public oatpp::web::server::handler::AuthorizationObject {
 public:
-  CustomAuthorizationObject(const oatpp::String& pUserId, const oatpp::String& pUserRole) : userId(pUserId) {
-    userRole = pUserRole;
-  }
+    oatpp::String userId;
+    oatpp::String userRole;
 
-  oatpp::String userId;
-  oatpp::String userRole;
+    CustomAuthorizationObject(const oatpp::String &pUserId, const oatpp::String &pUserRole) : userId(pUserId) {
+        userRole = pUserRole;
+    }
 };

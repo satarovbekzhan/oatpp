@@ -11,40 +11,36 @@
 class PriceDb : public oatpp::orm::DbClient {
 public:
 
-  PriceDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/price_init.sql");
-//    migration.migrate();
-  }
+    PriceDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createPrice,
-        "INSERT INTO price "
-        "(product, value) "
-        "VALUES (:price.product, "
-        ":price.value);",
-        PARAM(oatpp::Object<PriceDto>, price))
+    QUERY(createPrice,
+          "INSERT INTO price "
+          "(product, value) "
+          "VALUES (:price.product, "
+          ":price.value);",
+          PARAM(oatpp::Object<PriceDto>, price))
 
-  QUERY(getAllPrices,
-        "SELECT * FROM price LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllPrices,
+          "SELECT * FROM price LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getPriceById,
-        "SELECT * FROM price WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getPriceById,
+          "SELECT * FROM price WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(updatePrice,
-        "UPDATE price "
-        "SET "
-        "product=:price.product, "
-        "value=:price.value "
-        "timestamp=:price.timestamp"
-        "WHERE id=:price.id",
-        PARAM(oatpp::Object<PriceDto>, price))
+    QUERY(updatePrice,
+          "UPDATE price "
+          "SET "
+          "product=:price.product, "
+          "value=:price.value "
+          "timestamp=:price.timestamp"
+          "WHERE id=:price.id",
+          PARAM(oatpp::Object<PriceDto>, price))
 
-  QUERY(deletePriceById,
-        "DELETE FROM price WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deletePriceById,
+          "DELETE FROM price WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

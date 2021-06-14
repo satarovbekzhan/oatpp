@@ -8,12 +8,12 @@
 
 class CartDto : public oatpp::DTO {
 
-  DTO_INIT(CartDto, DTO)
+    DTO_INIT(CartDto, DTO)
 
-  DTO_FIELD(Int32, id);
-  DTO_FIELD(Int32, product, "product");
-  DTO_FIELD(Int32, user, "user");
-  DTO_FIELD(Int32, amount, "amount");
+    DTO_FIELD(Int32, id);
+    DTO_FIELD(Int32, product, "product");
+    DTO_FIELD(Int32, user, "user");
+    DTO_FIELD(Int32, amount, "amount");
 
 };
 

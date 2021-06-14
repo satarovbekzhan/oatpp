@@ -12,29 +12,28 @@
 #include "controller/LoginController.hpp"
 
 void run() {
-  AppComponent components;
+    AppComponent components;
 
-  OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
+    OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
 
-  auto userController = std::make_shared<UserController>();
-  userController->addEndpointsToRouter(router);
+    auto userController = std::make_shared<UserController>();
+    userController->addEndpointsToRouter(router);
+    auto productController = std::make_shared<MainController>();
+    productController->addEndpointsToRouter(router);
+    auto loginController = std::make_shared<LoginController>();
+    loginController->addEndpointsToRouter(router);
 
-  auto productController = std::make_shared<MainController>();
-  productController->addEndpointsToRouter(router);
-  auto loginController = std::make_shared<LoginController>();
-  loginController->addEndpointsToRouter(router);
+    OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
+    OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
+    oatpp::network::Server server(connectionProvider, connectionHandler);
 
-  OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
-  OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
-  oatpp::network::Server server(connectionProvider, connectionHandler);
-
-  OATPP_LOGI("Pizzeria App", "Server running on port %s", connectionProvider->getProperty("port").getData());
-  server.run();
+    OATPP_LOGI("Pizzeria App", "Server running on port %s", connectionProvider->getProperty("port").getData());
+    server.run();
 }
 
 int main() {
-  oatpp::base::Environment::init();
-  run();
-  oatpp::base::Environment::destroy();
-  return 0;
+    oatpp::base::Environment::init();
+    run();
+    oatpp::base::Environment::destroy();
+    return 0;
 }

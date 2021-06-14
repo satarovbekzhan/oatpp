@@ -12,34 +12,41 @@
 
 class MainController : public oatpp::web::server::api::ApiController {
 public:
-  MainController(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper)) : oatpp::web::server::api::ApiController(objectMapper) {
-    setDefaultAuthorizationHandler(std::make_shared<CustomBearerAuthorizationHandler>());
-  }
+
+    MainController(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
+            : oatpp::web::server::api::ApiController(objectMapper) {
+        setDefaultAuthorizationHandler(std::make_shared<CustomBearerAuthorizationHandler>());
+    }
+
 private:
-  ProductService productService;
+
+    ProductService productService;
+
 public:
-  static std::shared_ptr<MainController> createShared(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper)) {
-    return std::make_shared<MainController>(objectMapper);
-  }
 
-  // READ PRODUCTS
-  ENDPOINT_INFO(getProducts) {
-    info->summary = "Get all stored products";
-  }
-  ENDPOINT("GET", "products/offset/{offset}/limit/{limit}", getProducts, PATH(UInt32, offset), PATH(UInt32, limit)) {
-    return createDtoResponse(Status::CODE_200, productService.getAllProducts(offset, limit));
-  }
+    static std::shared_ptr<MainController> createShared(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper)) {
+        return std::make_shared<MainController>(objectMapper);
+    }
 
-  // hi with authorization
-  ENDPOINT("GET", "/hi", sayHi, AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
-    OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized");
-    return createResponse(Status::CODE_200, authObject->userId + " - " + authObject->userRole);
-  }
+    // READ PRODUCTS
+    ENDPOINT_INFO(getProducts) {
+        info->summary = "Get all stored products";
+    }
 
-  // hello
-  ENDPOINT("GET", "/hello", sayHello) {
-    return createResponse(Status::CODE_200, "Hello World!");
-  }
+    ENDPOINT("GET", "products/offset/{offset}/limit/{limit}", getProducts, PATH(UInt32, offset), PATH(UInt32, limit)) {
+        return createDtoResponse(Status::CODE_200, productService.getAllProducts(offset, limit));
+    }
+
+    // hi with authorization
+    ENDPOINT("GET", "/hi", sayHi, AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized");
+        return createResponse(Status::CODE_200, authObject->userId + " - " + authObject->userRole);
+    }
+
+    // hello
+    ENDPOINT("GET", "/hello", sayHello) {
+        return createResponse(Status::CODE_200, "Hello World!");
+    }
 
 };
 

@@ -11,39 +11,35 @@
 class PhoneDb : public oatpp::orm::DbClient {
 public:
 
-  PhoneDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/phone_init.sql");
-//    migration.migrate();
-  }
+    PhoneDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createPhone,
-        "INSERT INTO phone "
-        "(number, user) "
-        "VALUES (:phone.number, "
-        ":phone.user);",
-        PARAM(oatpp::Object<PhoneDto>, phone))
+    QUERY(createPhone,
+          "INSERT INTO phone "
+          "(number, user) "
+          "VALUES (:phone.number, "
+          ":phone.user);",
+          PARAM(oatpp::Object<PhoneDto>, phone))
 
-  QUERY(getAllPhones,
-        "SELECT * FROM phone LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllPhones,
+          "SELECT * FROM phone LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getPhoneById,
-        "SELECT * FROM phone WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getPhoneById,
+          "SELECT * FROM phone WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(updatePhone,
-        "UPDATE phone "
-        "SET "
-        "number=:phone.number, "
-        "user=:phone.user "
-        "WHERE id=:phone.id",
-        PARAM(oatpp::Object<PhoneDto>, phone))
+    QUERY(updatePhone,
+          "UPDATE phone "
+          "SET "
+          "number=:phone.number, "
+          "user=:phone.user "
+          "WHERE id=:phone.id",
+          PARAM(oatpp::Object<PhoneDto>, phone))
 
-  QUERY(deletePhoneById,
-        "DELETE FROM phone WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deletePhoneById,
+          "DELETE FROM phone WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

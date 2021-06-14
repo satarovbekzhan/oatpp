@@ -8,10 +8,10 @@
 
 class TokenDto : public oatpp::DTO {
 
-  DTO_INIT(TokenDto, DTO)
+    DTO_INIT(TokenDto, DTO)
 
-  DTO_FIELD(Any, token, "token");
-  DTO_FIELD(String, email, "email");
+    DTO_FIELD(Any, token, "token");
+    DTO_FIELD(String, email, "email");
 
 };
 

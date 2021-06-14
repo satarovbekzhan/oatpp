@@ -8,10 +8,10 @@
 
 class LoginDto : public oatpp::DTO {
 
-  DTO_INIT(LoginDto, DTO)
+    DTO_INIT(LoginDto, DTO)
 
-  DTO_FIELD(String, email, "email");
-  DTO_FIELD(String, password, "password");
+    DTO_FIELD(String, email, "email");
+    DTO_FIELD(String, password, "password");
 
 };
 

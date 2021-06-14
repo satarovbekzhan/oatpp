@@ -11,41 +11,37 @@
 class ProductDb : public oatpp::orm::DbClient {
 public:
 
-  ProductDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/product_init.sql");
-//    migration.migrate();
-  }
+    ProductDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createProduct,
-        "INSERT INTO product "
-        "(title, description, picture) "
-        "VALUES (:product.title, "
-        ":product.description, "
-        ":product.picture);",
-        PARAM(oatpp::Object<ProductDto>, product))
+    QUERY(createProduct,
+          "INSERT INTO product "
+          "(title, description, picture) "
+          "VALUES (:product.title, "
+          ":product.description, "
+          ":product.picture);",
+          PARAM(oatpp::Object<ProductDto>, product))
 
-  QUERY(getAllProducts,
-        "SELECT * FROM product LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllProducts,
+          "SELECT * FROM product LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getProductById,
-        "SELECT * FROM product WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getProductById,
+          "SELECT * FROM product WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(updateProduct,
-        "UPDATE product "
-        "SET "
-        "title=:product.title, "
-        "description=:description.password, "
-        "picture=:product.picture "
-        "WHERE id=:product.id",
-        PARAM(oatpp::Object<ProductDto>, product))
+    QUERY(updateProduct,
+          "UPDATE product "
+          "SET "
+          "title=:product.title, "
+          "description=:description.password, "
+          "picture=:product.picture "
+          "WHERE id=:product.id",
+          PARAM(oatpp::Object<ProductDto>, product))
 
-  QUERY(deleteProductById,
-        "DELETE FROM product WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deleteProductById,
+          "DELETE FROM product WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

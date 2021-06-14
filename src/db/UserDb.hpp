@@ -11,47 +11,47 @@
 class UserDb : public oatpp::orm::DbClient {
 public:
 
-  UserDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {}
+    UserDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createUser,
-        "INSERT INTO user "
-        "(email, password, firstname, lastname, salutation, role) "
-        "VALUES (:user.email, "
-        ":user.password, "
-        ":user.firstname, "
-        ":user.lastname, "
-        ":user.salutation, "
-        ":user.role);",
-        PARAM(oatpp::Object<UserDto>, user))
+    QUERY(createUser,
+          "INSERT INTO user "
+          "(email, password, firstname, lastname, salutation, role) "
+          "VALUES (:user.email, "
+          ":user.password, "
+          ":user.firstname, "
+          ":user.lastname, "
+          ":user.salutation, "
+          ":user.role);",
+          PARAM(oatpp::Object<UserDto>, user))
 
-  QUERY(getAllUsers,
-        "SELECT * FROM user LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllUsers,
+          "SELECT * FROM user LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getUserById,
-        "SELECT * FROM user WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getUserById,
+          "SELECT * FROM user WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(getUserByEmail,
-        "SELECT * FROM user WHERE email=:email;",
-        PARAM(oatpp::String, email))
+    QUERY(getUserByEmail,
+          "SELECT * FROM user WHERE email=:email;",
+          PARAM(oatpp::String, email))
 
-  QUERY(updateUser,
-        "UPDATE user "
-        "SET "
-        "email=:user.email, "
-        "password=:user.password, "
-        "firstname=:user.firstname, "
-        "lastname=:user.lastname, "
-        "salutation=:user.salutation, "
-        "role=:user.role "
-        "WHERE id=:user.id",
-        PARAM(oatpp::Object<UserDto>, user))
+    QUERY(updateUser,
+          "UPDATE user "
+          "SET "
+          "email=:user.email, "
+          "password=:user.password, "
+          "firstname=:user.firstname, "
+          "lastname=:user.lastname, "
+          "salutation=:user.salutation, "
+          "role=:user.role "
+          "WHERE id=:user.id",
+          PARAM(oatpp::Object<UserDto>, user))
 
-  QUERY(deleteUserById,
-        "DELETE FROM user WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deleteUserById,
+          "DELETE FROM user WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

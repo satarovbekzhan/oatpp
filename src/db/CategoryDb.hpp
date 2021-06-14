@@ -11,37 +11,33 @@
 class CategoryDb : public oatpp::orm::DbClient {
 public:
 
-  CategoryDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/category_init.sql");
-//    migration.migrate();
-  }
+    CategoryDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createCategory,
-        "INSERT INTO category "
-        "(name) "
-        "VALUES (:category.name);",
-        PARAM(oatpp::Object<CategoryDto>, category))
+    QUERY(createCategory,
+          "INSERT INTO category "
+          "(name) "
+          "VALUES (:category.name);",
+          PARAM(oatpp::Object<CategoryDto>, category))
 
-  QUERY(getAllCategories,
-        "SELECT * FROM category LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllCategories,
+          "SELECT * FROM category LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getCategoryById,
-        "SELECT * FROM category WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getCategoryById,
+          "SELECT * FROM category WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(updateCategory,
-        "UPDATE category "
-        "SET "
-        "name=:category.name "
-        "WHERE id=:category.id",
-        PARAM(oatpp::Object<CategoryDto>, category))
+    QUERY(updateCategory,
+          "UPDATE category "
+          "SET "
+          "name=:category.name "
+          "WHERE id=:category.id",
+          PARAM(oatpp::Object<CategoryDto>, category))
 
-  QUERY(deleteCategoryById,
-        "DELETE FROM category WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deleteCategoryById,
+          "DELETE FROM category WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

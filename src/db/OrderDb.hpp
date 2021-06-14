@@ -11,44 +11,40 @@
 class OrderDb : public oatpp::orm::DbClient {
 public:
 
-  OrderDb(const std::shared_ptr<oatpp::orm::Executor>& executor) : oatpp::orm::DbClient(executor) {
-//    oatpp::orm::SchemaMigration migration(executor);
-//    migration.addFile(1, "src/sql/order_init.sql");
-//    migration.migrate();
-  }
+    OrderDb(const std::shared_ptr<oatpp::orm::Executor> &executor) : oatpp::orm::DbClient(executor) {}
 
-  QUERY(createOrder,
-        "INSERT INTO order "
-        "(product, user, address, amount) "
-        "VALUES (:order.product, "
-        ":order.user, "
-        ":order.address, "
-        ":order.amount);",
-        PARAM(oatpp::Object<OrderDto>, order))
+    QUERY(createOrder,
+          "INSERT INTO order "
+          "(product, user, address, amount) "
+          "VALUES (:order.product, "
+          ":order.user, "
+          ":order.address, "
+          ":order.amount);",
+          PARAM(oatpp::Object<OrderDto>, order))
 
-  QUERY(getAllOrders,
-        "SELECT * FROM order LIMIT :limit OFFSET :offset;",
-        PARAM(oatpp::UInt32, offset),
-        PARAM(oatpp::UInt32, limit))
+    QUERY(getAllOrders,
+          "SELECT * FROM order LIMIT :limit OFFSET :offset;",
+          PARAM(oatpp::UInt32, offset),
+          PARAM(oatpp::UInt32, limit))
 
-  QUERY(getOrderById,
-        "SELECT * FROM order WHERE id=:id;",
-        PARAM(oatpp::Int32, id))
+    QUERY(getOrderById,
+          "SELECT * FROM order WHERE id=:id;",
+          PARAM(oatpp::Int32, id))
 
-  QUERY(updateOrder,
-        "UPDATE order "
-        "SET "
-        "product=:order.product, "
-        "user=:order.user, "
-        "address=:order.address, "
-        "amount=:order.amount, "
-        "timestamp=:order.timestamp "
-        "WHERE id=:order.id",
-        PARAM(oatpp::Object<OrderDto>, order))
+    QUERY(updateOrder,
+          "UPDATE order "
+          "SET "
+          "product=:order.product, "
+          "user=:order.user, "
+          "address=:order.address, "
+          "amount=:order.amount, "
+          "timestamp=:order.timestamp "
+          "WHERE id=:order.id",
+          PARAM(oatpp::Object<OrderDto>, order))
 
-  QUERY(deleteOrderById,
-        "DELETE FROM users WHERE id=:id",
-        PARAM(oatpp::Int32, id))
+    QUERY(deleteOrderById,
+          "DELETE FROM users WHERE id=:id",
+          PARAM(oatpp::Int32, id))
 };
 
 #include OATPP_CODEGEN_END(DbClient)

@@ -10,16 +10,21 @@
 
 class UserService {
 private:
-  typedef oatpp::web::protocol::http::Status Status;
+
+    typedef oatpp::web::protocol::http::Status Status;
+
 private:
-  OATPP_COMPONENT(std::shared_ptr<UserDb>, userDatabaseClient);
+
+    OATPP_COMPONENT(std::shared_ptr<UserDb>, userDatabaseClient);
+
 public:
-  oatpp::Object<UserDto> createUser(const oatpp::Object<UserDto>& dto);
-  oatpp::Vector<oatpp::Object<UserDto>> getAllUsers(const oatpp::UInt32& offset, const oatpp::UInt32& limit);
-  oatpp::Object<UserDto> getUserById(const oatpp::Int32& id);
-  oatpp::Object<UserDto> getUserByEmail(const oatpp::String& email);
-  oatpp::Object<UserDto> updateUser(const oatpp::Object<UserDto>& dto);
-  oatpp::Object<UserDto> deleteUserById(const oatpp::Int32& id);
+
+    oatpp::Object<UserDto> createUser(const oatpp::Object<UserDto> &dto);
+    oatpp::Vector<oatpp::Object<UserDto>> getAllUsers(const oatpp::UInt32 &offset, const oatpp::UInt32 &limit);
+    oatpp::Object<UserDto> getUserById(const oatpp::Int32 &id);
+    oatpp::Object<UserDto> getUserByEmail(const oatpp::String &email);
+    oatpp::Object<UserDto> updateUser(const oatpp::Object<UserDto> &dto);
+    oatpp::Object<UserDto> deleteUserById(const oatpp::Int32 &id);
 };
 
 #endif//UserService_hpp
