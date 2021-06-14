@@ -55,6 +55,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -81,6 +83,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -107,6 +111,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -133,6 +139,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -159,6 +167,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -185,6 +195,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDATABASE_FILE=&quot;/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/db.sqlite&quot;"/>
+					<Add option="-DJWT_SECRET_KEY=&quot;some_secret_key&quot;"/>
+					<Add option="-DJWT_SIGN_ALGORITHM=&quot;HS256&quot;"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite"/>
 					<Add directory="/usr/local/include/oatpp-1.2.5/oatpp-sqlite/sqlite"/>
@@ -314,6 +326,12 @@
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/src/util/JwtUtil.hpp">
 			<Option target="pizzeria-lib"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/LoginControllerTest.cpp">
+			<Option target="pizzeria-test"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/LoginControllerTest.hpp">
+			<Option target="pizzeria-test"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/satar/Univer/C++ SS2021/Cpp/apl-1-satarov/test/Tests.cpp">
 			<Option target="pizzeria-test"/>

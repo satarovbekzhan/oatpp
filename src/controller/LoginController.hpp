@@ -29,13 +29,12 @@ public:
     }
 
     // Login to system with email and password and get a token
-    ENDPOINT("GET", "/login", login, BODY_DTO(Object < LoginDto > , loginDto)) {
+    ENDPOINT("POST", "/login", login, BODY_DTO(Object < LoginDto > , loginDto)) {
         if (loginDto->email && loginDto->password) {
             oatpp::Object<UserDto> userDto = userService.getUserByEmail(loginDto->email);
             if (userDto->password == loginDto->password) {
-                JwtUtil jwtUtil;
                 auto tokenDto = TokenDto::createShared();
-                tokenDto->token = jwtUtil.generateToken(userDto);
+                tokenDto->token = JwtUtil::generateToken(userDto);
                 tokenDto->email = userDto->email;
                 return createDtoResponse(Status::CODE_200, tokenDto);
             }

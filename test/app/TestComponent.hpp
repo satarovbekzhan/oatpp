@@ -10,6 +10,7 @@
 #include "oatpp-sqlite/orm.hpp"
 
 #include "TestDatabaseComponent.hpp"
+#include "../../src/util/JwtUtil.hpp"
 
 class TestComponent {
 public:

@@ -1,13 +1,13 @@
+#include "LoginControllerTest.hpp"
 #include "UserControllerTest.hpp"
 
 #include <iostream>
 
 void runTests() {
 
-    OATPP_RUN_TEST(UserControllerTest);
+    OATPP_RUN_TEST(LoginControllerTest);
+//    OATPP_RUN_TEST(UserControllerTest);
 
-    // TODO - Add more tests here:
-    // OATPP_RUN_TEST(MyAnotherTest);
 }
 
 int main() {

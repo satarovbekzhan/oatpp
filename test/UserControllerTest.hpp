@@ -1,5 +1,5 @@
-#ifndef MyControllerTest_hpp
-#define MyControllerTest_hpp
+#ifndef UserControllerTest_hpp
+#define UserControllerTest_hpp
 
 #include <iostream>
 
@@ -21,4 +21,4 @@ public:
 
 };
 
-#endif // MyControllerTest_hpp
+#endif//UserControllerTest_hpp

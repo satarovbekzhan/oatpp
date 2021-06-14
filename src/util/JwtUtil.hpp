@@ -8,25 +8,24 @@ using namespace jwt::params;
 
 class JwtUtil {
 public:
-    std::string secretKey = "pizzeria_secret_code";
-    std::string algorithmType = "HS256";
-
-    oatpp::String generateToken(oatpp::Object<UserDto> &userDto) {
+    static oatpp::String generateToken(oatpp::Object<UserDto> &userDto) {
+        std::string id = oatpp::utils::conversion::int32ToStdStr(userDto->id);
         std::string role = "ROLE_ADMIN";
         if (userDto->role == UserDto_hpp::Role::MODERATOR) role = "ROLE_MODERATOR";
         if (userDto->role == UserDto_hpp::Role::CUSTOMER) role = "ROLE_CUSTOMER";
 
-        jwt::jwt_object obj{algorithm(algorithmType), secret(secretKey),
-                            payload({{"id",   oatpp::utils::conversion::int32ToStdStr(userDto->id)},
+        jwt::jwt_object obj{algorithm(JWT_SIGN_ALGORITHM),
+                            secret(JWT_SECRET_KEY),
+                            payload({{"id", id},
                                      {"role", role}})};
         obj.add_claim("exp", std::chrono::system_clock::now() + std::chrono::seconds{600});
         auto token = obj.signature();
         return oatpp::String(token.c_str(), token.length(), true);
     }
 
-    bool verifyToken(oatpp::String token) {
+    static bool verifyToken(oatpp::String token) {
         try {
-            auto obj = jwt::decode(token->std_str(), algorithms({algorithmType}), secret(secretKey));
+            auto obj = jwt::decode(token->std_str(), algorithms({JWT_SIGN_ALGORITHM}), secret(JWT_SECRET_KEY));
         } catch (const jwt::TokenExpiredError &e) {
             return false;
         } catch (const jwt::SignatureFormatError &e) {
@@ -39,14 +38,14 @@ public:
         return true;
     }
 
-    oatpp::String extractIdFromToken(oatpp::String token) {
-        auto obj = jwt::decode(token->std_str(), algorithms({algorithmType}), secret(secretKey));
+    static oatpp::String extractIdFromToken(oatpp::String token) {
+        auto obj = jwt::decode(token->std_str(), algorithms({JWT_SIGN_ALGORITHM}), secret(JWT_SECRET_KEY));
         auto id = obj.payload().get_claim_value<std::string>("id");
         return oatpp::String(id.c_str(), id.length(), true);
     }
 
-    oatpp::String extractRoleFromToken(oatpp::String token) {
-        auto obj = jwt::decode(token->std_str(), algorithms({algorithmType}), secret(secretKey));
+    static oatpp::String extractRoleFromToken(oatpp::String token) {
+        auto obj = jwt::decode(token->std_str(), algorithms({JWT_SIGN_ALGORITHM}), secret(JWT_SECRET_KEY));
         auto role = obj.payload().get_claim_value<std::string>("role");
         return oatpp::String(role.c_str(), role.length(), true);
     }

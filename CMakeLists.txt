@@ -60,11 +60,10 @@ target_link_libraries(pizzeria-lib
 add_definitions(
         ## SQLite database file
         -DDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/db.sqlite"
-
-        ## SQLite database test file
-        ## -DTESTDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/test-db.sqlite"
-        ## Path to database migration scripts
-        ## -DDATABASE_MIGRATIONS="${CMAKE_CURRENT_SOURCE_DIR}/sql"
+        ## JWT secret key
+        -DJWT_SECRET_KEY="some_secret_key"
+        ## JWT signing algorithm
+        -DJWT_SIGN_ALGORITHM="HS256"
 )
 
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
@@ -81,7 +80,9 @@ add_executable(pizzeria-test
         test/app/TestDatabaseComponent.hpp
         test/app/TestComponent.hpp
         test/UserControllerTest.hpp
-        test/UserControllerTest.cpp)
+        test/UserControllerTest.cpp
+        test/LoginControllerTest.hpp
+        test/LoginControllerTest.cpp)
 target_link_libraries(pizzeria-test pizzeria-lib)
 
 enable_testing()
