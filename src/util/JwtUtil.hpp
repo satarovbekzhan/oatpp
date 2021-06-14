@@ -23,7 +23,7 @@ public:
       })};
     obj.add_claim("exp", std::chrono::system_clock::now() + std::chrono::seconds{600});
     auto token = obj.signature();
-    return toOatppStr(token);
+    return oatpp::String(token.c_str(), token.length(), true);
   }
 
   bool verifyToken(oatpp::String token) {
@@ -44,22 +44,12 @@ public:
   oatpp::String extractIdFromToken(oatpp::String token) {
     auto obj = jwt::decode(token->std_str(), algorithms({algorithmType}), secret(secretKey));
     auto id = obj.payload().get_claim_value<std::string>("id");
-    return toOatppStr(id);
+    return oatpp::String(id.c_str(), id.length(), true);
   }
 
   oatpp::String extractRoleFromToken(oatpp::String token) {
     auto obj = jwt::decode(token->std_str(), algorithms({algorithmType}), secret(secretKey));
     auto role = obj.payload().get_claim_value<std::string>("role");
-    return toOatppStr(role);
-  }
-
-  oatpp::String toOatppStr(std::string str) {
-    int l = str.length() + 1;
-    v_char8 buff [l];
-    auto size = oatpp::utils::conversion::primitiveToCharSequence(str, &buff[0], l, str.c_str());
-    if (size > 0) {
-      return oatpp::String((const char*)&buff[0], size, true);
-    }
-    return nullptr;
+    return oatpp::String(role.c_str(), role.length(), true);
   }
 };
