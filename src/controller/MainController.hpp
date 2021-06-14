@@ -5,7 +5,6 @@
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
-#include "../auth/CustomBearerAuthorizationHandler.hpp"
 #include "../service/ProductService.hpp"
 
 #include OATPP_CODEGEN_BEGIN(ApiController)

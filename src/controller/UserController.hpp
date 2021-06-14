@@ -5,6 +5,7 @@
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
+#include "../auth/CustomBearerAuthorizationHandler.hpp"
 #include "../service/UserService.hpp"
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
@@ -13,7 +14,9 @@ class UserController : public oatpp::web::server::api::ApiController {
 public:
 
     explicit UserController(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
-            : oatpp::web::server::api::ApiController(objectMapper) {}
+            : oatpp::web::server::api::ApiController(objectMapper) {
+        setDefaultAuthorizationHandler(std::make_shared<CustomBearerAuthorizationHandler>());
+    }
 
 private:
 
@@ -31,8 +34,10 @@ public:
         info->addConsumes < Object < UserDto >> ("application/json");
         info->addResponse < Object < UserDto >> (Status::CODE_200, "application/json");
     }
-
-    ENDPOINT("POST", "users", createUser, BODY_DTO(Object < UserDto > , userDto)) {
+    ENDPOINT("POST", "users", createUser, BODY_DTO(Object<UserDto>, userDto),
+             AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized!");
+        OATPP_ASSERT_HTTP(authObject->userRole == "ROLE_ADMIN", Status::CODE_403, "Admin authority required!");
         return createDtoResponse(Status::CODE_200, userService.createUser(userDto));
     }
 
@@ -42,8 +47,10 @@ public:
         info->addResponse < Object < UserDto >> (Status::CODE_200, "application/json");
         info->pathParams["userId"].description = "User Identifier";
     }
-
-    ENDPOINT("GET", "users/{userId}", getUserById, PATH(Int32, userId)) {
+    ENDPOINT("GET", "users/{userId}", getUserById, PATH(Int32, userId),
+             AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized!");
+        OATPP_ASSERT_HTTP(authObject->userRole == "ROLE_ADMIN", Status::CODE_403, "Admin authority required!");
         return createDtoResponse(Status::CODE_200, userService.getUserById(userId));
     }
 
@@ -51,8 +58,10 @@ public:
     ENDPOINT_INFO(getUsers) {
         info->summary = "Get all stored users";
     }
-
-    ENDPOINT("GET", "users/offset/{offset}/limit/{limit}", getUsers, PATH(UInt32, offset), PATH(UInt32, limit)) {
+    ENDPOINT("GET", "users/offset/{offset}/limit/{limit}", getUsers, PATH(UInt32, offset), PATH(UInt32, limit),
+             AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized!");
+        OATPP_ASSERT_HTTP(authObject->userRole == "ROLE_ADMIN", Status::CODE_403, "Admin authority required!");
         return createDtoResponse(Status::CODE_200, userService.getAllUsers(offset, limit));
     }
 
@@ -62,8 +71,10 @@ public:
         info->addConsumes < Object < UserDto >> ("application/json");
         info->addResponse < Object < UserDto >> (Status::CODE_200, "application/json");
     }
-
-    ENDPOINT("PUT", "users/{userId}", putUser, PATH(Int32, userId), BODY_DTO(Object < UserDto > , userDto)) {
+    ENDPOINT("PUT", "users/{userId}", putUser, PATH(Int32, userId), BODY_DTO(Object<UserDto> , userDto),
+             AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized!");
+        OATPP_ASSERT_HTTP(authObject->userRole == "ROLE_ADMIN", Status::CODE_403, "Admin authority required!");
         userDto->id = userId;
         return createDtoResponse(Status::CODE_200, userService.updateUser(userDto));
     }
@@ -73,8 +84,10 @@ public:
         info->summary = "Delete user by id";
         info->addResponse < Object < UserDto >> (Status::CODE_200, "application/json");
     }
-
-    ENDPOINT("DELETE", "users/{userId}", deleteUser, PATH(Int32, userId)) {
+    ENDPOINT("DELETE", "users/{userId}", deleteUser, PATH(Int32, userId),
+             AUTHORIZATION(std::shared_ptr<CustomAuthorizationObject>, authObject)) {
+        OATPP_ASSERT_HTTP(authObject->userId, Status::CODE_401, "Unauthorized!");
+        OATPP_ASSERT_HTTP(authObject->userRole == "ROLE_ADMIN", Status::CODE_403, "Admin authority required!");
         return createDtoResponse(Status::CODE_200, userService.deleteUserById(userId));
     }
 
